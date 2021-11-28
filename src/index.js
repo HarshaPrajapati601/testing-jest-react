@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import App from 'components/App';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Combinedreducers from 'reducers'
 import reportWebVitals from './reportWebVitals';
+import Root from 'Root';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Root>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Root>,
   document.getElementById('root')
 );
 
