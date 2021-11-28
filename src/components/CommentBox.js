@@ -43,10 +43,4 @@ class CommentBox extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        comments: state.comments
-    }
-}
-
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(CommentBox);
