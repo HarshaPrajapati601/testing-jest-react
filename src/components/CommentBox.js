@@ -7,7 +7,7 @@ class CommentBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comment: ''
+            comment: null
         }
     }
 
@@ -28,7 +28,7 @@ class CommentBox extends Component {
 
     render() {
         const {comment} = this.state;
-        if (comment === 'hp') {
+        if (comment === '') {
             // Simulate an error!
             throw new Error('I crashed!');
           }
