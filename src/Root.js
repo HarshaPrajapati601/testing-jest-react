@@ -3,12 +3,12 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import combineReducers from 'reducers';
 
-const store = createStore(combineReducers, {});
 
-const Root = (props) => {
+const Root = ({children}) => {
+    const store = createStore(combineReducers);
     return(
         <Provider store={store}>
-            {props.children}
+            {children}
             </Provider>
 
     )

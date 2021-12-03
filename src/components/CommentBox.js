@@ -28,6 +28,10 @@ class CommentBox extends Component {
 
     render() {
         const {comment} = this.state;
+        if (comment === 'hp') {
+            // Simulate an error!
+            throw new Error('I crashed!');
+          }
         return(
             <form onSubmit={this.handleSubmit}>
                 <h4>Add a Comment</h4>
