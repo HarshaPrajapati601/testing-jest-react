@@ -1,24 +1,26 @@
 import React from 'react';
-import { CommentList } from 'components/CommentList';
-import { shallow } from 'enzyme';
+import CommentList  from 'components/CommentList';
+import {mount} from 'enzyme';
 import Root from 'Root';
 
 let wrapped;
-      // our mock commentList function to replace the one provided by mapDispatchToProps
-      const mockCommentlistFn = jest.fn();
 beforeEach(()=> {
-           // pass the mock function as the login prop 
-      wrapped = shallow(
-      <Root>
-         <CommentList comments={mockCommentlistFn} />
-      </Root>
-      ); 
+      const initialState = {
+            comments: ['Comment 1', 'Comment 2']
+      };
+      wrapped = mount(
+            <Root initialState={initialState}>
+               <CommentList  />
+            </Root>
+            ); 
 });
 
-// it('creates one Li per comment', () => {
-//     console.log(wrapped.find('li').length).toEqual(2);
-// })
+it('creates one Li per comment', () => {
+ expect(wrapped.find('li').length).toEqual(2);
+});
 
 it('it shows the text of each comme', () => {
-    console.log(wrapped.props());
+      console.log(wrapped.render().text())
+    expect(wrapped.render().text()).toContain('Comment 1');
+    expect(wrapped.render().text()).toContain('Comment 2');
 })

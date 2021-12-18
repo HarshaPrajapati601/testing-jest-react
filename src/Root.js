@@ -4,8 +4,9 @@ import { createStore } from 'redux';
 import combineReducers from 'reducers';
 
 
-const Root = ({children}) => {
-    const store = createStore(combineReducers);
+const Root = ({ children, initialState = {} }) => {
+    // const store = createStore(combineReducers);
+    const store = createStore(combineReducers, initialState);
     return(
         <Provider store={store}>
             {children}
