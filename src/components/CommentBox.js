@@ -76,7 +76,7 @@ class CommentBox extends Component {
                         Submit Comment</button>
                 </div>
             </form>
-            <button className="cursor-pointer"
+            <button className="fetch-comment cursor-pointer"
             style={pageStyles.buttonFetch}
              onClick={this.props.fetchComments}
              >Fetch Comments

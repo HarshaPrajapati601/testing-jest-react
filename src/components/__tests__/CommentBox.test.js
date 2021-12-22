@@ -16,13 +16,11 @@ afterEach(()=> {
     wrapped.unmount();
 })
 
- it('has a text area and a button', () => {
+ it('has a text area and 2 buttons', () => {
     //creating new instances of the component u wana test. we use afterEach()
     //if u mount unmount it
-    // console.log(wrapped.find("textarea").length);
-
     expect(wrapped.find('textarea').length).toEqual(1);
-    expect(wrapped.find('button').length).toEqual(1);
+    expect(wrapped.find('button').length).toEqual(2);
  })
 
  describe('has the text area', () => {
