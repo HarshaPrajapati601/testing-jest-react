@@ -31,12 +31,18 @@ it('Can fetch a list of comments and display them', (done)=> {
    wrapped.find('.fetch-comment').simulate('click')
 //   introduce a tiny little pause --setTimeout
 //tell jest to hold on a sec for this setTImeout to complete we use a callback
-   setTimeout(() => {
+//    setTimeout(() => {
+//     wrapped.update();
+//     expect(wrapped.find('li').length).toEqual(3);
+//     done();
+//     wrapped.unmount()
+//    }, 100)
+   moxios.wait(() => {
     wrapped.update();
     expect(wrapped.find('li').length).toEqual(3);
     done();
-    wrapped.unmount()
-   }, 100)
+    wrapped.unmount()  
+   })
 
     //find the fetch comment button and and simulate a click event on it
 
