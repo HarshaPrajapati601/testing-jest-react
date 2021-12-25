@@ -39,6 +39,20 @@ class CommentBox extends Component {
         }
     }
 
+    componentDidMount() {
+        this.shouldNavigateAway();
+       }
+
+    componentDidUpdate() {
+        this.shouldNavigateAway();
+    }
+    
+    shouldNavigateAway = () => {
+        if(!this.props.auth) {
+            console.log("I need to navigate awya")
+        }
+    }
+
     handleChange =(e) => {
         this.setState({
             comment: e.target.value
@@ -86,4 +100,9 @@ class CommentBox extends Component {
     }
 }
 
-export default connect(null, actions)(CommentBox);
+const mapStateToProps = (state) => {
+    return{
+        auth: state.auth
+    }
+}
+export default connect(mapStateToProps, actions)(CommentBox);
