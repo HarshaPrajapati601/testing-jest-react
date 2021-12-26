@@ -7,7 +7,11 @@
 //total 3 funcuton that returns a fn and that in urn returns a fn
 
 export default ({ dispatch}) =>  next => action => {    
-
+    //middleware logic
+    //check to see if the action has a promise on its 'payload' property 
+    //if it does then wait for it to resolve
+    // if it doesnot then sent the action to the 
+    //next middleware
         }
 
 //middlewares are series of functions that return each other.
