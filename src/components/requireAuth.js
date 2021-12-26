@@ -14,6 +14,7 @@ export default ChildComponent => {
         
         shouldNavigateAway = () => {
             if(!this.props.auth) {
+                //route logic doubt
                 console.log("I need to navigate away", this)
             }
         }
