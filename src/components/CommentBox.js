@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions  from '../actions';
+import requireAuth from 'components/requireAuth';
 
 const pageStyles = {
     mainContainer: {
@@ -36,20 +37,6 @@ class CommentBox extends Component {
         super(props);
         this.state = {
             comment: null
-        }
-    }
-
-    componentDidMount() {
-        this.shouldNavigateAway();
-       }
-
-    componentDidUpdate() {
-        this.shouldNavigateAway();
-    }
-    
-    shouldNavigateAway = () => {
-        if(!this.props.auth) {
-            console.log("I need to navigate awya")
         }
     }
 
@@ -99,10 +86,4 @@ class CommentBox extends Component {
         )
     }
 }
-
-const mapStateToProps = (state) => {
-    return{
-        auth: state.auth
-    }
-}
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(requireAuth(CommentBox));

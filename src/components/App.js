@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CommentBox from './CommentBox';
 import CommentList from './CommentList';
-import MyErrorBoudnary from './MyErrorBoundary';
+// import MyErrorBoudnary from './MyErrorBoundary';
 import * as actions from 'actions'
 
 const styles = ({
@@ -42,7 +42,7 @@ class App extends React.Component {
     render(){
         return(
             <div>
-                <MyErrorBoudnary>
+                {/* <MyErrorBoudnary> */}
                 <BrowserRouter>
                 <header>
                     {this.renderHeader()}
@@ -52,7 +52,7 @@ class App extends React.Component {
                     <Route path="/post" element={<CommentBox />} />
                     </ Routes>
                 </BrowserRouter>
-                </MyErrorBoudnary>
+                {/* </MyErrorBoudnary> */}
                 
             </div>
         )
