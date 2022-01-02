@@ -6,7 +6,8 @@ export default ({dispatch, getState}) => (next) => (action) =>{
     next(action);
     //grab our satte and ateempt to validate it in coomparision to the schema
     let validate = tv4.validate(getState(), stateSchema);
-
-    console.log(validate);
+    if(validate) {
+        console.log("valid");
+    }
 
 }
